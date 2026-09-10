@@ -2,36 +2,54 @@
 
 int main() {
     float temperatura;
-    char origem, destino;
+    int opcao;
+
+    printf("### Conversor de temperaturas ###\n");
+    printf("1 - Celsius para Kelvin\n");
+    printf("2 - Celsius para Fahrenheit\n");
+    printf("3 - Kelvin para Celsius\n");
+    printf("4 - Kelvin para Fahrenheit\n");
+    printf("5 - Fahrenheit para Celsius\n");
+    printf("6 - Fahrenheit para Kelvin\n");
+
+    printf("\nEscolha uma opcao: ");
+    scanf("%d", &opcao);
 
     printf("Digite a temperatura: ");
     scanf("%f", &temperatura);
 
-    printf("Escolha a origem (C, F ou K): ");
-    scanf(" %c", &origem);
+    switch (opcao) {
 
-    printf("Escolha o destino (C, F ou K): ");
-    scanf(" %c", &destino);
+        case 1:
+            temperatura = temperatura + 273.15;
+            break;
 
-    if (origem == 'C' && destino == 'F')
-        temperatura = temperatura * 9 / 5 + 32;
+        case 2:
+            temperatura = temperatura * 9 / 5 + 32;
+            break;
 
-    else if (origem == 'C' && destino == 'K')
-        temperatura = temperatura + 273;
+        case 3:
+            temperatura = temperatura - 273.15;
+            break;
 
-    else if (origem == 'K' && destino == 'C')
-        temperatura = temperatura - 273;
+        case 4:
+            temperatura = (temperatura - 273.15) * 9 / 5 + 32;
+            break;
 
-    else if (origem == 'K' && destino == 'F')
-        temperatura = (temperatura - 273) * 9 / 5 + 32;
+        case 5:
+            temperatura = (temperatura - 32) * 5 / 9;
+            break;
 
-    else if (origem == 'F' && destino == 'C')
-        temperatura = (temperatura - 32) * 5 / 9;
+        case 6:
+            temperatura = (temperatura - 32) * 5 / 9 + 273.15;
+            break;
 
-    else if (origem == 'F' && destino == 'K')
-        temperatura = (temperatura - 32) * 5 / 9 + 273;
+        default:
+            printf("Opcao invalida!\n");
+            return 0;
+    }
 
-    printf("Resultado: %.2f %c\n", temperatura, destino);
+    printf("Temperatura convertida: %.2f\n", temperatura);
 
     return 0;
 }
