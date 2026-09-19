@@ -172,3 +172,11 @@ Os testes foram definidos para verificar principalmente:
 * contagem de ocorrências consecutivas;
 * reinicialização da contagem quando necessário;
 * encerramento automático após três ocorrências consecutivas.
+
+## 7. Justificativa da escolha do `while`
+
+Foi escolhida a estrutura de repetição `while` porque o número de temperaturas que serão analisadas não é necessariamente conhecido antecipadamente. O monitoramento deve continuar enquanto a condição de continuidade for verdadeira e pode ser encerrado quando uma condição específica for atingida.
+
+Diferentemente do `for`, que é mais adequado quando existe uma quantidade de repetições previamente definida, o `while` permite que o programa continue realizando novas leituras de acordo com as condições do monitoramento.
+
+Dessa forma, o `while` torna a lógica do programa mais adequada para um sistema que precisa analisar continuamente as temperaturas até que a condição de encerramento seja atingida.
